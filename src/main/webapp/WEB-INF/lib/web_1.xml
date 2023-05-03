@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+   id="WebApp_ID" version="4.0">
+      <security-role>
+         <role-name>
+            role1</role-name>
+      </security-role>
+      <security-constraint>
+         <web-resource-collection>
+         <web-resource-name>webapp</web-resource-name>   
+            <url-pattern>/ch10/security.jsp</url-pattern>
+            <http-method>GET</http-method>
+         </web-resource-collection>
+         <auth-constraint>
+            <description></description>
+            <role-name>role1</role-name>
+         </auth-constraint>
+      </security-constraint>
+      <login-config>
+         <auth-method>FORM</auth-method>
+         <form-login-config>
+         	<form-login-page>/ch10/login.jsp</form-login-page>
+         	<form-error-page>/ch10/login_failed.jsp</form-error-page>
+         </form-login-config>
+      </login-config>
+      <error-page>
+         <error-code>500</error-code>
+         <location>/ch11/errorCode_error.jsp</location>
+      </error-page>
+      <error-page>
+         <exception-type>java.lang.Exception</exception-type>
+         <location>/ch11/exceptionType_error.jsp</location>
+      </error-page>
+      
+</web-app>

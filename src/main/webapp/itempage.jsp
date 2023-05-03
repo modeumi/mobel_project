@@ -20,9 +20,6 @@ a {
 	margin-left: 2.5%;
 	border: 3px solid black;
 }
-
-
-
 #category {
 	text-align: center;
 	margin-top : 5%;

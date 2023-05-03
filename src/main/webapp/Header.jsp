@@ -35,7 +35,7 @@
 						<c:when test="${empty sessionScope.log_name}">
 							<a href="login.jsp">로그인</a>
 							<a href="join.jsp">회원가입</a>
-							<a href="help.jsp">고객센터</a>
+							<a href="Complain.jsp">고객센터</a>
 
 						</c:when>
 

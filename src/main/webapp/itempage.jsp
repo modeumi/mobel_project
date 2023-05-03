@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Insert title here</title>mo
 <style type="text/css">
 a {
 	text-decoration-line: none;
@@ -20,6 +20,8 @@ a {
 	margin-left: 2.5%;
 	border: 3px solid black;
 }
+
+
 
 #category {
 	text-align: center;

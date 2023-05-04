@@ -25,6 +25,7 @@ public class Dao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Member member = new Member();
+		
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("select * from member where id = '" + id + "' ");

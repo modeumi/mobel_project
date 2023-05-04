@@ -16,6 +16,7 @@ public class Dao {
 		conn = DriverManager.getConnection(url, user, pass);
 		return conn;
 	}
+<<<<<<< HEAD
 //	public static insert () {
 		
 //	}
@@ -30,6 +31,22 @@ public class Dao {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				if (rs.getString("pass").equals(pass)) {
+=======
+	public static insert () {
+		
+	}
+	public Member login( String id, String pass) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("select * from member where id = '" + id + "' ");
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				if (rs.getString("pass").equals(pass)) {
+					Member member = new Member();
+>>>>>>> refs/remotes/origin/mobel
 					member.setID(rs.getString("id"));
 					member.setPass(rs.getString("pass"));;
 					member.setName(rs.getString("name"));

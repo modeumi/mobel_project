@@ -107,7 +107,7 @@
 </script>
 <body>
    <div class="join">
-      <form action="insert" method="post" name="member">
+      <form action="joinservlet" method="post" name="member">
          <div class="title">
             <img src="img/·Î°í.png" width="150" height="100"><a
                href="./homepage.jsp"></a>

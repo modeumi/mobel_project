@@ -1,23 +1,12 @@
 package model;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
-import javax.servlet.http.HttpSession;
+
 
 public class Dao {
-	public static Connection getConnection() throws SQLException, ClassNotFoundException {
-		Connection conn = null;
-		String url = "jdbc:mysql://localhost:3306/project?autoReconnect=true&verifyServerCertificate=false&useSSL=true&useUnicode=true&characterEncoding=utf8";
-		String user = "root";
-		String pass = "java";
-		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection(url, user, pass);
-		return conn;
-	}
 //	public static insert () {
 //		
 //	}
@@ -27,7 +16,7 @@ public class Dao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			conn = getConnection();
+			conn = DBconnect.getConnection();
 			pstmt = conn.prepareStatement("select * from member where id = '" + id + "' ");
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -48,13 +37,13 @@ public class Dao {
 		return member;
 	}
 	
-	public static void iteminfo (String id) {
+	public static Item iteminfo (String id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Item item = new Item();
 		try {
-			conn = getConnection();
+			conn = DBconnect.getConnection();
 			pstmt = conn.prepareStatement("select * from item where id = '"+id+"' " );
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -62,6 +51,7 @@ public class Dao {
 				item.setName(rs.getString("name"));
 				item.setImg(rs.getString("image"));
 				item.setPrice(rs.getInt("price"));
+				return item;
 			}
 		}catch (Exception e ) {
 			e.printStackTrace();
@@ -74,6 +64,7 @@ public class Dao {
 				e.printStackTrace();
 			}
 		}
+		return item;
 	}
 	
 }

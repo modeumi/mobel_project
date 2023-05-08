@@ -36,9 +36,22 @@ function additem(){
 </button> 
 </form>
 
+<form action = "Itemservlet" method = "post" >
+<input type = "hidden" name = "itemid" value = "1002">
+<button type = "submit" >
+<span><img src = "image/cart.jpg" width= '19px' height = '19px'></span>
+<span> 장바구니</span>
+</button> 
+</form>
+
 <a href = " buy.jsp"><button type="button" >
 <span>구매하기</span>
 </button></a>
+<a href = "cartlist.jsp" > 
+<button >
+<span><img src = "image/cart.jpg" width = '30px'  height ='30px'></span>
+</button>
+</a>
 
 	
 </body>
